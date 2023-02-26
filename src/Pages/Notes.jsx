@@ -7,19 +7,17 @@ import {BsPlusLg} from "react-icons/bs";
 
 function Notes({notes}) {
   const [searchText, setSearchText] = useState("");
-  const filteredNotes = notes.filter((note) =>  note.title.toLowerCase().includes(searchText));
+  const filteredNotes = notes.filter((note) =>  note.title.toLowerCase().includes(searchText.toLowerCase()));
 
   return (
     <div className="max-w-[960px] relative h-screen ml-auto mr-auto px-4">
       <Header />
       <Search handleSearchNote={setSearchText} />
-      {filteredNotes.length == 0 && <p className="w-full h-4/5 flex items-center justify-center">No Notes Found</p>}
+      {filteredNotes.length === 0 && <p className="w-full h-4/5 flex items-center justify-center">No Notes Found</p>}
       <NotesList 
-        notes={notes.filter((note) =>
-          note.title.toLowerCase().includes(searchText.toLowerCase)
-        )}
+        notes={filteredNotes}
       />
-      <Link className="absolute right-0 bottom-20 bg-slate-400 p-4 rounded-lg shadow-lg" to="/create-note">
+      <Link className="absolute right-8 bottom-24 bg-slate-400 p-4 rounded-lg shadow-lg" to="/create-note">
         <BsPlusLg className="text-white" />
       </Link>
     </div>
