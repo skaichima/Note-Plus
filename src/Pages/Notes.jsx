@@ -16,7 +16,7 @@ function Notes({notes}) {
       {filteredNotes.length == 0 && <p className="w-full h-4/5 flex items-center justify-center">No Notes Found</p>}
       <NotesList 
         notes={notes.filter((note) =>
-          note.title.toLowerCase().includes(searchText)
+          note.title.toLowerCase().includes(searchText.toLowerCase)
         )}
       />
       <Link className="absolute right-0 bottom-20 bg-slate-400 p-4 rounded-lg shadow-lg" to="/create-note">
