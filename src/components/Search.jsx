@@ -10,7 +10,7 @@ function Search({handleSearchNote}) {
                     handleSearchNote(event.target.value)
                 } 
                 type="text" 
-                className="border-0 w-full bg-transparent outline-none px-2" 
+                className="border-0 md:text-xl md:py-1 w-full bg-transparent outline-none px-2" 
                 placeholder="Type to search..." 
             />
         </div>
