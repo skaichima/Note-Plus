@@ -13,7 +13,7 @@ function App() {
   }, [notes])
 
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename='/Note-Plus'>
       <Routes>
         <Route path="/" element={<Notes notes={notes} setNotes={setNotes} />} />
         <Route path="/create-note" element={<CreateNote setNotes={setNotes} />} />
