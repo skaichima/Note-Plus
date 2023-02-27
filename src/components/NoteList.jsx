@@ -1,14 +1,17 @@
 import React from 'react';
 import Note from './Note';
+import { Component } from 'react';
 
-function NotesList({notes}) {
-    return(
-        <div className="note-list">
-            {notes.slice(0).reverse().map(note => (
-                <Note key={note.id} id={note.id} title={note.title} date={note.date}/>
-            ))}
-        </div>
-    )
+class NotesList extends Component  {
+    render() {
+        return(
+            <div className="note-list">
+                {this.props.notes.slice(0).reverse().map(note => (
+                    <Note key={note.id} id={note.id} title={note.title} date={note.date}/>
+                ))}
+            </div>
+        )
+    }
 }
 
 export default NotesList;

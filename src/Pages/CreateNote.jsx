@@ -4,6 +4,7 @@ import {IoIosArrowBack} from "react-icons/io";
 import {nanoid} from "nanoid";
 
 function CreateNote({setNotes}) {
+  
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
   const date = new Date();
